@@ -38,16 +38,16 @@ void SLT::proc(){
 		Z=0;
 }
 
-//SC_MODULE(ula){
-//	sc_in< sc_uint<3> > opcode;
-//	sc_in< sc_int<SIZE> > A, B;
-//	sc_out< sc_int<SIZE> > Z;
-//	sc_out<bool> zero;
-//
-//	AND *an;
-//	SC_CTOR(ula){
-//		an = new AND("u_and");
-//		an->A(A);an->B(B);an->Z(Z);
-//
-//	}
-//};
+void MUX::proc(){
+	switch((sc_uint<3>)sel){
+		case 0: Z=x0; break;
+		case 1: Z=x1; break;
+		case 2: Z=x2; break;
+		case 3: Z=x3; break;
+		case 4: Z=x4; break;
+		case 5: Z=x5; break;
+		case 6: Z=x6; break;
+		case 7: Z=x7; break;
+
+	}
+}
