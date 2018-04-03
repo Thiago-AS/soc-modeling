@@ -1,24 +1,11 @@
-#include "systemc.h"
-#include <iostream>
+#include "ula_tb.h"
+
 using namespace std;
-#define SIZE 32
 
-
-SC_MODULE (contorno) {
-
-	sc_out< sc_int<SIZE> > A, B;
-	sc_in< sc_int<SIZE> > Z;
-
-
-	void aciona(){
-		cout << "---" << "   A " << " B " << "Z " << "Carry" << endl;
-		A = 6; B = 20;
-		wait(1, SC_PS);
-		cout << sc_time_stamp() << " " << A << " " << B << " " << Z << " " << endl;
-	}
-
-	SC_CTOR (contorno) {
-		SC_THREAD(aciona);
-	}
-};
+void ula_tb::aciona(){
+	cout << "---" << " A " << " B " << " opcode " << " Z " << " zero " << endl;
+	A=5;B=10;opcode=7;
+	wait(1, SC_PS);
+	cout << sc_time_stamp() << " " << A << " " << B << " " << opcode << " " << Z << " " << zero << endl;
+}
 

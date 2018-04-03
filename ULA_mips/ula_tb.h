@@ -10,7 +10,7 @@ SC_MODULE (ula_tb) {
 	sc_in< sc_int<SIZE> > Z;
 	sc_in<bool> zero;
 	void aciona();
-		SC_CTOR (ula_tb) {
+	SC_CTOR (ula_tb) {
 		SC_THREAD(aciona);
 	}
 };

@@ -1,5 +1,5 @@
 $date
-     Apr 03, 2018       10:13:14
+     Apr 03, 2018       11:31:29
 $end
 
 $version
@@ -13,7 +13,9 @@ $end
 $scope module SystemC $end
 $var wire   32  aaaaa  a [31:0]  $end
 $var wire   32  aaaab  b [31:0]  $end
-$var wire   32  aaaac  z [31:0]  $end
+$var wire    3  aaaac  opcode [2:0]  $end
+$var wire   32  aaaad  z [31:0]  $end
+$var wire    1  aaaae  zero       $end
 $upscope $end
 $enddefinitions  $end
 
@@ -22,9 +24,11 @@ All initial values are dumped below at time 0 sec = 0 timescale units.
 $end
 
 $dumpvars
-b110 aaaaa
-b10100 aaaab
-b11111111111111111111111111110010 aaaac
+b101 aaaaa
+b1010 aaaab
+b111 aaaac
+b1 aaaad
+0aaaae
 $end
 
 #10

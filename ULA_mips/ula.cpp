@@ -51,3 +51,10 @@ void MUX::proc(){
 
 	}
 }
+
+void ula::proc(){
+	if((sc_int<SIZE>)Z==0)
+		zero = 0;
+	else
+		zero = 0;
+}
