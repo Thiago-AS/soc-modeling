@@ -7,12 +7,11 @@
 #define SIZE 32
 
 
-//enum OPCODE {
-//	ADD, SUB, AND, OR, NOT, XOR, BYPASS, SLT
-//};
+enum OPCODE {
+	op_add, op_sub, op_and, op_or, op_not, op_xor, op_bypass, op_slt
+};
 
 SC_MODULE(ADD){
-	//@TODO add and change output, include carry on and carry out
 	sc_in< sc_int<SIZE> > A, B;
 	sc_out< sc_int<SIZE> > Z;
 	void proc();
@@ -154,10 +153,12 @@ SC_MODULE(ula) {
 		ula_xor->A(A);ula_xor->B(B);ula_xor->Z(z5);
 		ula_bypass->A(A);ula_bypass->Z(z6);
 		ula_slt->A(A);ula_slt->B(B);ula_slt->Z(z7);
+
 		ula_mux->sel(opcode);
 		ula_mux->x0(z0);ula_mux->x1(z1);ula_mux->x2(z2);ula_mux->x3(z3);
 		ula_mux->x4(z4);ula_mux->x5(z5);ula_mux->x6(z6);ula_mux->x7(z7);
 		ula_mux->Z(Z);
+
 		ula_zero->Z(Z);ula_zero->zero(zero);
 
 		SC_METHOD(proc);

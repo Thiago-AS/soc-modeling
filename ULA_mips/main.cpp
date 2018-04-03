@@ -18,7 +18,7 @@ int sc_main (int argc, char *argv[]) {
 
 	cout << "iniciando ... " << endl;
 
-	sc_start (10, SC_PS);
+	sc_start (20, SC_PS);
 
 	sc_close_vcd_trace_file(trace_file);
 	cout << "Criou wave.vcd" << endl;

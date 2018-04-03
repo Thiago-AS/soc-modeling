@@ -47,14 +47,14 @@ void ZERO::proc(){
 
 void MUX::proc(){
 	switch((sc_uint<3>)sel){
-		case 0: Z=x0; break;
-		case 1: Z=x1; break;
-		case 2: Z=x2; break;
-		case 3: Z=x3; break;
-		case 4: Z=x4; break;
-		case 5: Z=x5; break;
-		case 6: Z=x6; break;
-		case 7: Z=x7; break;
+		case op_add: Z=x0; break;
+		case op_sub: Z=x1; break;
+		case op_and: Z=x2; break;
+		case op_or: Z=x3; break;
+		case op_not: Z=x4; break;
+		case op_xor: Z=x5; break;
+		case op_bypass: Z=x6; break;
+		case op_slt: Z=x7; break;
 
 	}
 }
