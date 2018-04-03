@@ -1,5 +1,5 @@
 $date
-     Apr 03, 2018       11:31:29
+     Apr 03, 2018       15:14:14
 $end
 
 $version
@@ -26,9 +26,39 @@ $end
 $dumpvars
 b101 aaaaa
 b1010 aaaab
-b111 aaaac
-b1 aaaad
+b0 aaaac
+b1111 aaaad
 0aaaae
 $end
+
+#1
+b1 aaaac
+b11111111111111111111111111111011 aaaad
+
+#2
+b10 aaaac
+b0 aaaad
+1aaaae
+
+#3
+b11 aaaac
+b1111 aaaad
+0aaaae
+
+#4
+b100 aaaac
+b11111111111111111111111111111010 aaaad
+
+#5
+b101 aaaac
+b1111 aaaad
+
+#6
+b110 aaaac
+b101 aaaad
+
+#7
+b111 aaaac
+b1 aaaad
 
 #10

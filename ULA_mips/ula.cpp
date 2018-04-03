@@ -38,6 +38,13 @@ void SLT::proc(){
 		Z=0;
 }
 
+void ZERO::proc(){
+	if((sc_int<SIZE>)Z == 0)
+		zero = 1;
+	else
+		zero = 0;
+}
+
 void MUX::proc(){
 	switch((sc_uint<3>)sel){
 		case 0: Z=x0; break;
@@ -50,11 +57,4 @@ void MUX::proc(){
 		case 7: Z=x7; break;
 
 	}
-}
-
-void ula::proc(){
-	if((sc_int<SIZE>)Z==0)
-		zero = 0;
-	else
-		zero = 0;
 }

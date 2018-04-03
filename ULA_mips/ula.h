@@ -82,6 +82,16 @@ SC_MODULE(BYPASS){
 	}
 };
 
+SC_MODULE(ZERO){
+	sc_in< sc_int<SIZE> > Z;
+	sc_out<bool> zero;
+	void proc();
+	SC_CTOR(ZERO){
+		SC_METHOD(proc);
+		sensitive << Z;
+	}
+};
+
 SC_MODULE(SLT){
 	sc_in< sc_int<SIZE> > A, B;
 	sc_out< sc_int<SIZE> > Z;
@@ -103,6 +113,7 @@ SC_MODULE(MUX){
 	}
 };
 
+
 SC_MODULE(ula) {
 	sc_in< sc_uint<3> > opcode;
 	sc_in< sc_int<SIZE> > A, B;
@@ -119,8 +130,9 @@ SC_MODULE(ula) {
 	BYPASS *ula_bypass;
 	SLT *ula_slt;
 	MUX *ula_mux;
+	ZERO *ula_zero;
 
-	void proc();
+	void proc(){}
 
 	SC_CTOR(ula) {
 		ula_add = new ADD("add");
@@ -132,6 +144,7 @@ SC_MODULE(ula) {
 		ula_bypass  = new BYPASS("bypass");
 		ula_slt  = new SLT("slt");
 		ula_mux = new MUX("mux");
+		ula_zero = new ZERO("zero");
 
 		ula_add->A(A);ula_add->B(B);ula_add->Z(z0);
 		ula_sub->A(A);ula_sub->B(B);ula_sub->Z(z1);
@@ -144,7 +157,8 @@ SC_MODULE(ula) {
 		ula_mux->sel(opcode);
 		ula_mux->x0(z0);ula_mux->x1(z1);ula_mux->x2(z2);ula_mux->x3(z3);
 		ula_mux->x4(z4);ula_mux->x5(z5);ula_mux->x6(z6);ula_mux->x7(z7);
-		ula_mux -> Z(Z);
+		ula_mux->Z(Z);
+		ula_zero->Z(Z);ula_zero->zero(zero);
 
 		SC_METHOD(proc);
 		sensitive << A << B << opcode;
