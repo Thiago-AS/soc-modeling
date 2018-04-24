@@ -11,7 +11,7 @@ enum state_type {
 SC_MODULE(traffic_controller){
 	sc_in_clk clk;
 	sc_in<bool> reset,IL,IC,AT;
-	sc_out< sc_int<2> > auto_estrada, via_lateral;
+	sc_out< sc_uint<2> > auto_estrada, via_lateral;
 	sc_signal<state_type> state,next_state;
 
 	void update_state();
