@@ -16,10 +16,14 @@ SC_MODULE(traffic_controller){
 
 	void update_state();
 	void state_logic();
+	void output_logic();
+
 	SC_CTOR(traffic_controller){
 		SC_METHOD(update_state);
 		sensitive << clk.pos();
 		SC_METHOD(state_logic);
+		sensitive << state << IL << IC << AT;
+		SC_METHOD(output_logic);
 		sensitive << state << IL << IC << AT;
 	}
 };

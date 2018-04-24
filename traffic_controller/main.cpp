@@ -3,7 +3,7 @@
 using namespace std;
 
 int sc_main (int argc, char *argv[]) {
-	sc_clock clk("clk",2,SC_NS);
+	sc_clock clk("clk",2,SC_PS);
 	sc_signal<bool> reset,IL,IC,AT;
 	sc_signal< sc_uint<2> > auto_estrada, via_lateral;
 
@@ -38,7 +38,7 @@ int sc_main (int argc, char *argv[]) {
 
 	cout << "iniciando ... " << endl;
 
-	sc_start (20, SC_NS);
+	sc_start (20, SC_PS);
 
 	sc_close_vcd_trace_file(trace_file);
 	cout << "Criou wave.vcd" << endl;
