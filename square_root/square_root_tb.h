@@ -14,11 +14,9 @@ SC_MODULE(square_root_tb){
 	sc_in<bool>clk;
 
 	void source();
-	void sink();
 
 	SC_CTOR(square_root_tb){
 		SC_CTHREAD(source, clk.pos());
-		SC_CTHREAD(sink, clk.pos());
 	}
 
 };

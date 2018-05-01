@@ -4,6 +4,7 @@ void square_root::compute(){
 	//Reset section
 	ready.write(false);
 	num_out.write(0);
+	wait();
 
 	while(true){
 		if(start.read()){
@@ -14,6 +15,7 @@ void square_root::compute(){
 			ready.write(false);
 		}
 		wait();
+
 	}
 }
 
