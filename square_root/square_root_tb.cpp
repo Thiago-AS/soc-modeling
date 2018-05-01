@@ -13,26 +13,26 @@ void square_root_tb::source(){
 	num_in.write(64);
 	wait();
 	wait();
-	std::cout << sc_time_stamp() << "  " << "num_in: " << num_in.read() << "  " << "num_out: " << num_out.read() << std::endl;
+
 
 	num_in.write(36);
 	wait();
 	wait();
-	std::cout << sc_time_stamp() << "  " << "num_in: " << num_in.read() << "  " << "num_out: " << num_out.read() << std::endl;
 
 	num_in.write(91);
 	wait();
 	wait();
-	std::cout << sc_time_stamp() << "  " << "num_in: " << num_in.read() << "  " << "num_out: " << num_out.read() << std::endl;
 
 	num_in.write(144);
 	wait();
 	wait();
-	std::cout << sc_time_stamp() << "  " << "num_in: " << num_in.read() << "  " << "num_out: " << num_out.read() << std::endl;
 
 	wait();
 	sc_stop();
+}
 
+void square_root_tb::sink(){
+	std::cout << sc_time_stamp() << "  " << "num_in: " << num_in.read() << "  " << "num_out: " << num_out.read() << std::endl;
 
 }
 
