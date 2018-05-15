@@ -7,7 +7,7 @@ template <class T> SC_MODULE(DF_mul){
 
 	void proc(){
 		while(true){
-			out.write(previous + (v_element.read() * m_element.read()));
+			out.write(previous.read() + (v_element.read() * m_element.read()));
 		}
 	}
 	SC_CTOR(DF_mul){
