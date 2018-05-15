@@ -1,8 +1,8 @@
 #include "systemc.h"
 
-template <class T> SC_MODULE(DF_mul){
-	sc_fifo_in<T> m_element, previous;
-	sc_fifo_out<T> out;
+SC_MODULE(mul){
+	sc_fifo_in<int> m_element, previous;
+	sc_fifo_out<int> out;
 	sc_in<int> v_element;
 
 	void proc(){
@@ -10,7 +10,7 @@ template <class T> SC_MODULE(DF_mul){
 			out.write(previous.read() + (v_element.read() * m_element.read()));
 		}
 	}
-	SC_CTOR(DF_mul){
+	SC_CTOR(mul){
 		SC_THREAD(proc);
 	}
 
